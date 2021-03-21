@@ -1,9 +1,5 @@
-<?= $this->extend('layout') ?>
-
-<?= $this->section('content') ?>
-
 <div class="actionbutton mt-2">
-   <a class="btn btn-info float-right mb20" href="<?=site_url('posts/add')?>">Add Post</a>
+   <a class="btn btn-info float-right mb20" href="<?=site_url('users/add')?>">Add Post</a>
 </div>
 
 <!-- Subject List -->
@@ -25,8 +21,8 @@
        <td><?= $post['name'] ?></td>
        <td><?= $post['email'] ?></td>
        <td align="center">
-         <a class="btn btn-sm btn-info" href="<?= site_url('posts/edit/'.$post['id']) ?>">Edit</a>
-         <a class="btn btn-sm btn-danger" href="<?= site_url('posts/delete/'.$post['id']) ?>">Delete</a>
+         <a class="btn btn-sm btn-info" href="<?= site_url('users/edit/'.$post['id']) ?>">Edit</a>
+         <a class="btn btn-sm btn-danger" href="<?= site_url('users/delete/'.$post['id']) ?>">Delete</a>
        </td>
      </tr>
 
@@ -34,11 +30,3 @@
   
   </tbody>
 </table>
-<?= $this->endSection() ?>
-
-
-<?= $this->section('footer') ?>
-
-<?= date('Y-m-d H:i:s') ?>
-
-<?= $this->endSection() ?>
