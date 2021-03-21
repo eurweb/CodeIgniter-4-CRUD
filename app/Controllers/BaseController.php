@@ -26,6 +26,8 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
+	protected $data = [];
+
 	protected $helpers = [];
 
 	/**
@@ -36,11 +38,20 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
+		$this->db   = \Config\Database::connect();
+
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
+	}
+
+	public function render($view, $template = 'layout')
+	{
+	  $this->data['content'] = view($view, $this->data);
+
+      return view($template, $this->data);
 	}
 
 }
